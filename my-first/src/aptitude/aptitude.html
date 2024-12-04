@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="aptitude_css.css">
+</head>
+<body>
+
+    <!-- Stars in the background -->
+    <div class="stars"></div>
+
+    <!-- Moving Parallax Background -->
+    <div class="parallax"></div>
+
+    <!-- Floating shapes in the background -->
+    <div class="floating-shape"></div>
+
+    <!-- Timer at the top right -->
+    <div id="timer" class="timer">Time Remaining: <span id="time"></span></div>
+
+    <!-- Main Content -->
+    <div class="quiz-container">
+        <div class="question-container">
+            <h2 id="question-title">Question 1</h2>
+            <div class="question-text" id="question-text">What is the capital of France?</div>
+
+            <div class="answers">
+                <input type="radio" name="answer" id="answer1" value="Paris">
+                <label for="answer1">Paris</label><br>
+                <input type="radio" name="answer" id="answer2" value="Berlin">
+                <label for="answer2">Berlin</label><br>
+                <input type="radio" name="answer" id="answer3" value="Madrid">
+                <label for="answer3">Madrid</label><br>
+                <input type="radio" name="answer" id="answer4" value="Rome">
+                <label for="answer4">Rome</label><br>
+            </div>
+
+            <div class="buttons">
+                <button id="prev-button" onclick="goToPreviousQuestion()">Previous</button>
+                <button id="next-button" onclick="goToNextQuestion()">Next</button>
+                <button id="save-button" onclick="saveAnswer()">Save Answer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="aptitude_react.js"></script>
+</body>
+</html>

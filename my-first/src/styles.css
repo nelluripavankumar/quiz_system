@@ -1,0 +1,168 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    perspective: 1000px; /* Add perspective to create 3D effect */
+}
+
+/* Light theme */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Dark theme */
+body.dark-theme {
+    background-color: #181818;
+    color: #f4f4f4;
+}
+
+/* Header styles */
+.top-bar {
+    background-color: #1877F2; /* Facebook blue color */
+    padding: 10px 20px;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+}
+
+.settings-button {
+    background-color: #fff;
+    border: none;
+    color: #1877F2; /* Facebook blue color */
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.settings-button:hover {
+    background-color: #ddd;
+}
+
+/* Settings menu */
+.settings-menu {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateZ(100px);
+    animation: slideIn 1s ease-out;
+}
+
+.settings-menu h3 {
+    margin-top: 0;
+}
+
+.settings-menu select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Main content */
+.main-content {
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Category boxes (3D effect and movement) */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    perspective: 1500px;
+}
+
+.category-box {
+    background-color: #1877F2; /* Facebook blue color */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: popIn 1s ease-out; /* Animation when appearing */
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.category-box:hover {
+    transform: translateY(-10px) rotateY(10deg); /* Adds 3D hover effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Company boxes */
+.companies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.company-box {
+    background-color: #4CAF50; /* Green color */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: popIn 1s ease-out; /* Animation when appearing */
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.company-box:hover {
+    transform: translateY(-10px) rotateY(10deg); /* Adds 3D hover effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 3D pop-in effect when the element comes into view */
+@keyframes popIn {
+    0% {
+        transform: scale(0) rotateY(180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+/* 3D slide-in animation for settings menu */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%) scaleY(0);
+    }
+    100% {
+        transform: translateX(0) scaleY(1);
+    }
+}
+
+/* Fade-in effect for main content */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
